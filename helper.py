@@ -1,13 +1,12 @@
 import urllib.request
 import cv2
-import matplotlib.pyplot as plt
 import numpy as np
+# import matplotlib.pyplot as plt
 # from IPython.display import HTML, FileLink
 # from IPython.display import Image as DisplayImage
 # from IPython.display import Pretty, ProgressBar, clear_output, display
 from PIL import Image
 from io import BytesIO
-
 
 
 def write_text_on_image(image: np.ndarray, text: str) -> np.ndarray:
@@ -90,6 +89,7 @@ def pil_to_bytes(image):
     pil_image.save(buffer, format="JPEG")
     byte_image = buffer.getvalue()
     return byte_image
+
 
 def to_rgb(image_data) -> np.ndarray:
     """

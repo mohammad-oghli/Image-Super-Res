@@ -1,0 +1,4 @@
+numpy
+openvino
+opencv-python
+streamlit

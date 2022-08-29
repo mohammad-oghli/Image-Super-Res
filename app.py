@@ -29,6 +29,16 @@ exec_net = ie.load_network(network=net, device_name=DEVICE)
 
 
 def cv_superresolution(image_source):
+    '''
+    Enhance low resolution image using deep learning (SISR) model
+    :param
+    image_source(str): Valid url or image object of the input image
+
+    :return
+    superresolution_image(np.ndarray): Two np array representing:
+    * Reshaped input image to the model target resolution
+    * Super resolution image of the input image
+    '''
     OUTPUT_PATH = Path("output/")
     os.makedirs(str(OUTPUT_PATH), exist_ok=True)
     full_image = load_image(image_source)
@@ -50,6 +60,11 @@ def st_ui():
     st.title("Image Super Resolution")
     st.caption("Image Quality Enhancement")
     st.info("Single Image Super Resolution (SISR) Implementation by Oghli")
+    container_hints = st.empty()
+    with container_hints.container():
+        st.markdown("* The network expects inputs with a width of 480, height of 270")
+        st.markdown("* The network returns images with a width of 1920, height of 1080")
+        st.markdown("* The new image is 16 times as large as the original image")
 
     st.sidebar.subheader("Upload image to enhance its quality")
     full_image = st.sidebar.file_uploader("Upload image", type=["png", "jpg"],
@@ -67,6 +82,7 @@ def st_ui():
     if gen_btn:
         s_msg.empty()
         if full_image:
+            container_hints.empty()
             # with st.spinner('Generating Super Resolution Image ...'):
             full_bicubic_image, full_superresolution_image = cv_superresolution(full_image)
             col1.subheader("Original Image")

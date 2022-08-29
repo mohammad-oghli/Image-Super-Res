@@ -67,7 +67,7 @@ def do_inference(full_image, exec_net):
             + target_height
             - CROPLINES * 2 * (upsample_factor // CROP_FACTOR)
     )
-    print(f"The output image will have a width of {new_width} " f"and a height of {new_height}")
+    #print(f"The output image will have a width of {new_width} " f"and a height of {new_height}")
 
     # start_time = time.perf_counter()
     # patch_nr = 0

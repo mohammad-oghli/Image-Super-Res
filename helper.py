@@ -5,6 +5,7 @@ import numpy as np
 # from IPython.display import HTML, FileLink
 # from IPython.display import Image as DisplayImage
 # from IPython.display import Pretty, ProgressBar, clear_output, display
+from PIL import Image
 from io import BytesIO
 
 

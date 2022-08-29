@@ -94,7 +94,7 @@ def st_ui():
                                file_name="superres_image_4x.jpeg", mime="image/jpeg")
             st.header("Animated GIF Comparison")
             image_super = write_text_on_image(image=to_rgb(full_superresolution_image), text="SUPER")
-            image_bicubic = write_text_on_image(image=to_rgb(full_bicubic_image), text="BICUBIC")
+            image_bicubic = write_text_on_image(image=to_rgb(full_bicubic_image), text="ORIGIN")
 
             img_array = [image_bicubic, image_super]
             image_gif = st.empty()

@@ -30,7 +30,7 @@ exec_net = ie.load_network(network=net, device_name=DEVICE)
 
 def cv_superresolution(image_source):
     '''
-    Enhance low resolution image using deep learning (SISR) model.
+    Enhance low resolution image using deep learning (SISR) model
     :param
     image_source(str): Valid url or image object of the input image
 

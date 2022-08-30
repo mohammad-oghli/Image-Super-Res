@@ -33,7 +33,7 @@ result = image_super_resolution.cv_superresolution(image_source).value
 result
 </pre>
 -It will return two **np arrays** representing:
-* Original image reshaped to the target resolution of the model.
+* Original image reshaped to the target resolution of the model
 * Super resolution image
 
 you can save result images in variables

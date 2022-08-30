@@ -35,9 +35,9 @@ def cv_superresolution(image_source):
     image_source(str): Valid url or image object of the input image
 
     :return
-    superresolution_image(np.ndarray): Two np array representing:
-    * Reshaped input image to the model target resolution
-    * Super resolution image of the input image
+    bicubic_image(np.ndarray): Reshaped input image to the model target resolution
+    :return
+    superresolution_image(np.ndarray): Super resolution image of the input image
     '''
     OUTPUT_PATH = Path("output/")
     os.makedirs(str(OUTPUT_PATH), exist_ok=True)

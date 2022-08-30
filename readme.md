@@ -42,7 +42,7 @@ origin_image = result[0]
 superresolution_image = result[1] 
 </pre>
 
-Then display super resolution image:
+Then display super resolution image
 <pre>
 plt.imshow(superresolution_image)
 </pre>

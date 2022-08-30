@@ -34,8 +34,9 @@ def cv_superresolution(image_source):
     :param
     image_source(str): Valid url or image object of the input image
 
-    :returns
+    :return
     bicubic_image(np.ndarray): Reshaped input image to the model target resolution
+    :return
     superresolution_image(np.ndarray): Super resolution image of the input image
     '''
     OUTPUT_PATH = Path("output/")

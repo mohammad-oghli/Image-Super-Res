@@ -62,8 +62,8 @@ def st_ui():
     st.info("Single Image Super Resolution (SISR) Implementation by Oghli")
     container_hints = st.empty()
     with container_hints.container():
-        st.markdown("* The network expects inputs with a width of 480, height of 270")
-        st.markdown("* The network returns images with a width of 1920, height of 1080")
+        st.markdown("* The model expects inputs with a width of 480, height of 270")
+        st.markdown("* The model returns images with a width of 1920, height of 1080")
         st.markdown("* It enhances the resolution of the input image by a factor of 4")
 
     st.sidebar.subheader("Upload image to enhance its quality")

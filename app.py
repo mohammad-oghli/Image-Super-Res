@@ -32,7 +32,7 @@ def cv_superresolution(image_source):
     '''
     Enhance low resolution image using deep learning (SISR) model
     :param
-    image_source(str): Valid url or image object of the input image
+    image_source(str): Valid image url or image object of the input image
 
     :return
     bicubic_image(np.ndarray): Reshaped input image to the model target resolution

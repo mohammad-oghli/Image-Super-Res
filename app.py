@@ -49,7 +49,10 @@ def cv_superresolution(image_source):
     # plt.imshow(to_rgb(full_image))
     # print(f"Showing full image with width {full_image.shape[1]} " f"and height {full_image.shape[0]}")
     # plt.show()
-    return do_inference(full_image, exec_net)
+    if full_image is not None:
+        return do_inference(full_image, exec_net)
+
+    return "Sorry, loading image failed"
 
 
 def st_ui():
@@ -85,15 +88,15 @@ def st_ui():
             # with st.spinner('Generating Super Resolution Image ...'):
             full_bicubic_image, full_superresolution_image = cv_superresolution(full_image)
             col1.subheader("Original Image")
-            col1.image(to_rgb(full_bicubic_image), use_column_width=True)
+            col1.image(full_bicubic_image, use_column_width=True)
             col2.subheader("SISR Image")
-            col2.image(to_rgb(full_superresolution_image), use_column_width=True)
-            byte_super_img = pil_to_bytes(to_rgb(full_superresolution_image))
+            col2.image(full_superresolution_image, use_column_width=True)
+            byte_super_img = pil_to_bytes(full_superresolution_image)
             st.download_button(label="Download Result", data=byte_super_img,
                                file_name="superres_image_4x.jpeg", mime="image/jpeg")
             st.header("Animated GIF Comparison")
-            image_super = write_text_on_image(image=to_rgb(full_superresolution_image), text="SUPER")
-            image_bicubic = write_text_on_image(image=to_rgb(full_bicubic_image), text="ORIGIN")
+            image_super = write_text_on_image(image=full_superresolution_image, text="SUPER")
+            image_bicubic = write_text_on_image(image=full_bicubic_image, text="ORIGIN")
 
             img_array = [image_bicubic, image_super]
             image_gif = st.empty()
@@ -109,12 +112,12 @@ def st_ui():
 if __name__ == "__main__":
     # render the app using streamlit ui function
     st_ui()
-    # image_source = Path("images/mass_effect.jpg")
+    # image_source = "images/mass_effect.jpg"
     # #image_source = "https://i.imgur.com/R5ovXDO.jpg"
     # full_bicubic_image, full_superresolution_image = cv_superresolution(image_source)
     # fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(30, 15))
-    # ax[0].imshow(to_rgb(full_bicubic_image))
-    # ax[1].imshow(to_rgb(full_superresolution_image))
-    # ax[0].set_title("Bicubic")
+    # ax[0].imshow(full_bicubic_image)
+    # ax[1].imshow(full_superresolution_image)
+    # ax[0].set_title("Origin")
     # ax[1].set_title("Superresolution")
     # plt.show()

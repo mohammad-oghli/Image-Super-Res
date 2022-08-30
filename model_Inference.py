@@ -8,7 +8,7 @@ import numpy as np
 # from IPython.display import Pretty, ProgressBar, clear_output, display
 from openvino.inference_engine import IECore
 from PIL import Image
-from helper import convert_result_to_image
+from helper import convert_result_to_image, to_rgb
 
 
 def do_inference(full_image, exec_net):
@@ -168,4 +168,4 @@ def do_inference(full_image, exec_net):
     #     f"{num_patches / duration:.2f}.\nInference patches per second: "
     #     f"{num_patches / total_inference_duration:.2f} "
     # )
-    return full_bicubic_image, full_superresolution_image
+    return to_rgb(full_bicubic_image), to_rgb(full_superresolution_image)

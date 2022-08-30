@@ -64,7 +64,7 @@ def st_ui():
     with container_hints.container():
         st.markdown("* The network expects inputs with a width of 480, height of 270")
         st.markdown("* The network returns images with a width of 1920, height of 1080")
-        st.markdown("* The new image is 16 times as large as the original image")
+        st.markdown("* It enhances the resolution of the input image by a factor of 4")
 
     st.sidebar.subheader("Upload image to enhance its quality")
     full_image = st.sidebar.file_uploader("Upload image", type=["png", "jpg"],

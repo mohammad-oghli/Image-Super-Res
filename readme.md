@@ -14,3 +14,4 @@ In brief:
 * Input image should be: **480x270** resolution.
 * Output image : **1920x1080** resolution.
 
+You can use image samples in the **/images** directory to test it on the model.

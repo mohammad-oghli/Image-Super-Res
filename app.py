@@ -111,13 +111,13 @@ def st_ui():
 
 if __name__ == "__main__":
     # render the app using streamlit ui function
-    st_ui()
+    #st_ui()
     # image_source = "images/mass_effect.jpg"
-    # #image_source = "https://i.imgur.com/R5ovXDO.jpg"
-    # full_bicubic_image, full_superresolution_image = cv_superresolution(image_source)
-    # fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(30, 15))
-    # ax[0].imshow(full_bicubic_image)
-    # ax[1].imshow(full_superresolution_image)
-    # ax[0].set_title("Origin")
-    # ax[1].set_title("Superresolution")
-    # plt.show()
+    image_source = "https://i.imgur.com/R5ovXDO.jpg"
+    full_bicubic_image, full_superresolution_image = cv_superresolution(image_source)
+    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(60, 30))
+    ax[0].imshow(full_bicubic_image)
+    ax[1].imshow(full_superresolution_image)
+    ax[0].set_title("Origin")
+    ax[1].set_title("Superresolution")
+    plt.show()

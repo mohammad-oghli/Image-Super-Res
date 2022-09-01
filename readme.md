@@ -1,5 +1,7 @@
 # Image Super Resolution (Daisi Hackathon)
 
+![Super_Figure](../Superres_Figure.png.png)
+
 Python function as a web service to enhance low resolution image to high quality image.
 
 The service is based on **Single Image Super Resolution (SISR)** deep learning model which is available on Open Model Zoo, check this [link](https://docs.openvino.ai/latest/omz_models_model_single_image_super_resolution_1032.html) for more info.

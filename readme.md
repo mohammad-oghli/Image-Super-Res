@@ -58,6 +58,8 @@ ax[0].set_title("Origin")
 ax[1].set_title("Superresolution")
 </pre>
 
+Review this [notebook](https://github.com/mohammad-oghli/Image-Super-Res/blob/main/notebook/image_superresolution.ipynb) for the full demo.
+
 Function `st_ui` included in the app to render the user interface of the application endpoints.
 
 Check the research paper reference for more info about super resolution model:

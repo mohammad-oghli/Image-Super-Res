@@ -1,6 +1,6 @@
 # Image Super Resolution (Daisi Hackathon)
 
-![Super_Figure](../Superres_Figure.png.png)
+![Super_Figure](../Superres_Figure.png)
 
 Python function as a web service to enhance low resolution image to high quality image.
 

@@ -110,8 +110,6 @@ def st_ui():
             image_gif.image(img_array[i])
             i = not i
             time.sleep(2)
-    # else:
-    #     st.sidebar.error("Please choose input image.")
 
 
 if __name__ == "__main__":

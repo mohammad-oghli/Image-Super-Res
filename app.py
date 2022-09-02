@@ -69,44 +69,49 @@ def st_ui():
         st.markdown("* It enhances the resolution of the input image by a factor of 4")
 
     st.sidebar.subheader("Upload image to enhance its quality")
-    full_image = st.sidebar.file_uploader("Upload image", type=["png", "jpg"],
+    uploaded_image = st.sidebar.file_uploader("Upload image", type=["png", "jpg"],
                                           accept_multiple_files=False, key=None, help="Image to enhance its quality")
     gen_btn = st.sidebar.button("Generate")
     col1, col2 = st.columns(2)
     s_msg = st.empty()
-    if full_image:
+    example_image = load_image('images/space.jpg')
+    ex_sub = col1.subheader("Image Sample")
+    example = col1.image(to_rgb(example_image), use_column_width=True)
+    if uploaded_image:
         s_msg = st.sidebar.success("Image uploaded successfully")
-    # with st.spinner("Loading Input Image ..."):
-        # if full_image:
-        #     col1.subheader("Original Image")
-        #     col1.image(full_image, use_column_width=True)
-        #     # content_img_size = (500, 500)
+        example.empty()
+        ex_sub.empty()
+
     if gen_btn:
         s_msg.empty()
-        if full_image:
-            container_hints.empty()
-            # with st.spinner('Generating Super Resolution Image ...'):
-            full_bicubic_image, full_superresolution_image = cv_superresolution(full_image)
-            col1.subheader("Original Image")
-            col1.image(full_bicubic_image, use_column_width=True)
-            col2.subheader("SISR Image")
-            col2.image(full_superresolution_image, use_column_width=True)
-            byte_super_img = pil_to_bytes(full_superresolution_image)
-            st.download_button(label="Download Result", data=byte_super_img,
-                               file_name="superres_image_4x.jpeg", mime="image/jpeg")
-            st.header("Animated GIF Comparison")
-            image_super = write_text_on_image(image=full_superresolution_image, text="SUPER")
-            image_bicubic = write_text_on_image(image=full_bicubic_image, text="ORIGIN")
+        example.empty()
+        ex_sub.empty()
+        full_image = 'images/space.jpg'
+        if uploaded_image:
+            full_image = uploaded_image
+        container_hints.empty()
+        # with st.spinner('Generating Super Resolution Image ...'):
+        full_bicubic_image, full_superresolution_image = cv_superresolution(full_image)
+        col1.subheader("Original Image")
+        col1.image(full_bicubic_image, use_column_width=True)
+        col2.subheader("SISR Image")
+        col2.image(full_superresolution_image, use_column_width=True)
+        byte_super_img = pil_to_bytes(full_superresolution_image)
+        st.download_button(label="Download Result", data=byte_super_img,
+                           file_name="superres_image_4x.jpeg", mime="image/jpeg")
+        st.header("Animated GIF Comparison")
+        image_super = write_text_on_image(image=full_superresolution_image, text="SUPER")
+        image_bicubic = write_text_on_image(image=full_bicubic_image, text="ORIGIN")
 
-            img_array = [image_bicubic, image_super]
-            image_gif = st.empty()
-            i = 0
-            while True:
-                image_gif.image(img_array[i])
-                i = not i
-                time.sleep(2)
-        else:
-            st.sidebar.error("Please choose input image.")
+        img_array = [image_bicubic, image_super]
+        image_gif = st.empty()
+        i = 0
+        while True:
+            image_gif.image(img_array[i])
+            i = not i
+            time.sleep(2)
+    # else:
+    #     st.sidebar.error("Please choose input image.")
 
 
 if __name__ == "__main__":

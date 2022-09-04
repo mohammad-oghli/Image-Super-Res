@@ -1,6 +1,6 @@
 # Image Super Resolution (Daisi Hackathon)
 
-![Super_Figure](https://i.imgur.com/7DveXYe_d.webp?maxwidth=760&fidelity=grand)
+![Super_Figure](https://i.imgur.com/7DveXYe.png)
 
 Python function as a web service to enhance low resolution image to high quality image.
 

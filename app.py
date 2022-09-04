@@ -5,12 +5,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-# from IPython.display import HTML, FileLink
-# from IPython.display import Image as DisplayImage
-# from IPython.display import Pretty, ProgressBar, clear_output, display
 from openvino.inference_engine import IECore
-from PIL import Image
-from io import BytesIO
 from helper import load_image, write_text_on_image, convert_result_to_image, to_rgb, pil_to_bytes
 from model_Inference import do_inference
 

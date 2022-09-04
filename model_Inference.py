@@ -1,5 +1,3 @@
-import os
-import time
 import cv2
 import numpy as np
 # import matplotlib.pyplot as plt
@@ -7,7 +5,6 @@ import numpy as np
 # from IPython.display import Image as DisplayImage
 # from IPython.display import Pretty, ProgressBar, clear_output, display
 from openvino.inference_engine import IECore
-from PIL import Image
 from helper import convert_result_to_image, to_rgb
 
 

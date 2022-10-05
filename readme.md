@@ -1,4 +1,4 @@
-# Image Super Resolution (Daisi Hackathon)
+# Image Super Resolution (2nd Winner Daisi Hackathon)
 
 ![Super_Figure](https://i.imgur.com/7DveXYe.png)
 

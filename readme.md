@@ -18,7 +18,7 @@ In brief:
 
 You can use image samples in the **/images** directory to test it on the model.
 
-### How to call it
+## How to call it
 
 -Load the Daisi
 <pre>
@@ -62,7 +62,7 @@ Review this [notebook](https://github.com/mohammad-oghli/Image-Super-Res/blob/ma
 
 Function `st_ui` included in the app to render the user interface of the application endpoints.
 
-### References
+## References
 
 Check this [research paper reference](https://arxiv.org/abs/1807.06779) for more info about super resolution model.
 

@@ -64,5 +64,5 @@ Function `st_ui` included in the app to render the user interface of the applica
 
 ### References
 
-Check [this research paper reference](https://arxiv.org/abs/1807.06779) for more info about super resolution model.
+Check this [research paper reference](https://arxiv.org/abs/1807.06779) for more info about super resolution model.
 

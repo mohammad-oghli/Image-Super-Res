@@ -62,6 +62,7 @@ Review this [notebook](https://github.com/mohammad-oghli/Image-Super-Res/blob/ma
 
 Function `st_ui` included in the app to render the user interface of the application endpoints.
 
-Check the research paper reference for more info about super resolution model:
+### Refrences
 
-https://arxiv.org/abs/1807.06779
+Check [this research paper reference](https://arxiv.org/abs/1807.06779) for more info about super resolution model.
+
